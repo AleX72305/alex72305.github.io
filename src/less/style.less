@@ -48,7 +48,7 @@ body {
 }
 
 /*Уборка обводки кнопок*/
-button, input, a {
+button, input, a, textarea {
 	&:focus {
 		outline: none;
 	}
@@ -76,6 +76,12 @@ a:hover {
 section {
 	padding: 10rem 0;	
 }
+.section-header {
+	margin: 2rem 0 10rem;
+	.bold();
+	font-size: 36px;
+	text-align: center;
+}
 /* main */
 .main {
 	padding: 3rem 0 5rem;
@@ -88,7 +94,7 @@ section {
 		margin-top: 0;
 		margin-bottom: 5rem;
 		.bold();
-		font-size: 4rem;
+		font-size: 40px;
 		line-height: 1.45;
 		text-transform: uppercase;
 		}
@@ -139,6 +145,7 @@ strong {
 	width: 100%;
 	margin: 2rem 0;
 	border: 1px solid @border-input;
+	border-radius: 5px;
 	padding: 1.5rem;
  }
  /*Подписи к полям*/
@@ -189,25 +196,116 @@ small {
 	display: inline-block;
 	.bold();
 	font-weight: 900;
-	font-size: 2rem;
+	font-size: 20px;
 	height: 7rem;
 	line-height: 7rem;
 	color: @text;
 	}
-
 }
 
 
+/*Оформление секции с преимуществами*/
+.features {
+	&-block {
+		text-align: center;
+	h3 {
+		.bold();
+		font-size: 2rem;
+		margin-bottom: 3rem;
+	}
+	p {
+		display: inline-block;
+		width: 80%;
+		font-size: 1.4rem;
+	}
+	}
+	&-img {
+	height: 8rem;
+	margin-bottom: 3rem;
+	img {
+	display: block;
+	margin: 0 auto;
+	}
+}
+}
+.slick-active {
+	outline: none;
+}
+
+.arrow {
+	top: 50%;
+	transform: translateY(-50%);
+	position: absolute;
+	z-index: 99;
+	width: 2rem;
+	height: 2rem;
+	border: none;
+}
+.prev {
+	left: 0;
+	background: url(../img/left-arrow.svg) center no-repeat;
+	background-size: 70%;
+}
+.next {
+	right: 0;
+	background: url(../img/right-arrow.svg) center no-repeat;
+    background-size: 70%;
+}
+
+/*Оформление всплывающих окон*/
+.popup {
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9;
+	background-color: rgba(0,0,0,0.5);
+	&-content {
+		position: fixed;
+		left: 50%;
+		top: 10%;
+		background-color: @light;
+		transform: translateX(-50%);
+		padding: 4rem 6rem;
+	}
+	&-form {
+		margin-top: 3rem;
+		padding: 0;
+	}
+	&-close {
+		position: absolute;
+		top: -1.6rem;
+		right: -2rem;
+		width: 2rem;
+		text-align: center;
+		border: none;
+		background-color: transparent;
+		font-size: 3rem;
+		color: @light;
+	}
+	&-content {
+		text-align: center;
+	}
+	&-header {
+		.bold();
+	}
+}
 
 
 @media (max-width: 991px) {
+	.phone-link {
+		text-align: center;
+	}
 	.main {
 		background-position: top right;
 	}
 	.main-content {
-		margin-top: 3rem;
+    margin-top: 3rem;
 	}
-
 	.main-title {
 		padding-bottom: 3rem;
 		text-align: center;
